@@ -16,7 +16,7 @@ COPY ./ ./
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 
-# Build the Next.js app
+# Build the Next.js app with standalone output
 RUN npm run build
 
 # Stage 2: Run the application
@@ -32,9 +32,9 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
-# Copy necessary files from the build stage
+# Copy the necessary files from the build stage
 COPY --from=builder /app/public ./public
-# COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 # Add health check for container monitoring
