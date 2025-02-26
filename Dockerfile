@@ -34,7 +34,7 @@ RUN addgroup --system --gid 1001 nodejs && \
 
 # Copy necessary files from the build stage
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
+# COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 # Add health check for container monitoring

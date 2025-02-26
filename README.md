@@ -20,6 +20,57 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Git Setup and Workflow
+
+### Initial Repository Setup
+
+If you're setting up this repository for the first time:
+
+```bash
+# Initialize the Git repository (if not already initialized)
+git init
+
+# Add the GitHub remote repository
+git remote add origin git@github.com:horphi/axtech.app.git
+```
+
+### Basic Git Commands
+
+```bash
+# Check remote repositories
+git remote -v
+
+# Add all files to staging
+git add .
+
+# Commit your changes
+git commit -m "Your commit message"
+
+# Push to the main branch
+git push -u origin main
+```
+
+### Changing the Remote URL
+
+If you need to update the remote repository URL:
+
+```bash
+git remote set-url origin git@github.com:horphi/axtech.app.git
+```
+
+### Working with Branches
+
+```bash
+# Create and checkout a new branch
+git checkout -b feature-branch
+
+# Switch to an existing branch
+git checkout main
+
+# Push a new branch to the remote repository
+git push -u origin feature-branch
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
